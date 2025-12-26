@@ -15,4 +15,9 @@ option(
 
 include(CTest)
 
-add_subdirectory(app/test-app)
+#add_subdirectory(third_party)
+add_subdirectory(app)
+add_subdirectory(lib)
+#if(LEARN_CMAKE_BUILD_TESTS)
+#    add_subdirectory(tests)
+#endif()
