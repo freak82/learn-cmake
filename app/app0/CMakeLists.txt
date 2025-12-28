@@ -3,6 +3,11 @@ add_executable(app0
     src/main.cpp
 )
 
+target_include_directories(app0
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
 target_link_libraries(app0
     PRIVATE lib0
 )

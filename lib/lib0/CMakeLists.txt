@@ -1,4 +1,4 @@
-add_library(lib0
+add_library(lib0 STATIC
     src/lib.cpp
 )
 
