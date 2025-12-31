@@ -8,7 +8,9 @@ target_include_directories(lib0
         $<INSTALL_INTERFACE:include>
 )
 
-target_compile_features(lib0 PUBLIC cxx_std_23)
+target_link_libraries(lib0 
+    PRIVATE flags_options
+)
 
 target_precompile_headers(lib0
     PRIVATE src/precompiled.h

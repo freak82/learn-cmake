@@ -10,10 +10,8 @@ target_include_directories(app0
 )
 
 target_link_libraries(app0
-    PRIVATE lib0
+    PRIVATE lib0 flags_options
 )
-
-target_compile_features(app0 PUBLIC cxx_std_23)
 
 target_precompile_headers(app0
     PRIVATE src/precompiled.h

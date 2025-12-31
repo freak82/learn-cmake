@@ -13,18 +13,8 @@ target_include_directories(test_app0
 target_link_libraries(test_app0
     PRIVATE
         doctest::doctest
-)
-
-target_compile_features(test_app0 PRIVATE cxx_std_23)
-
-target_compile_options(test_app0
-    PRIVATE
-        -fsanitize=address,undefined
-)
-
-target_link_options(test_app0
-    PRIVATE
-        -fsanitize=address,undefined
+        flags_options
+        tests_options
 )
 
 target_precompile_headers(test_app0

@@ -13,11 +13,15 @@ option(
     ON
 )
 
-include(CTest)
-
 add_subdirectory(3rdparty)
+
+include(cmake/flags.cmake)
+
 add_subdirectory(app)
 add_subdirectory(lib)
+
 if(LEARN_CMAKE_BUILD_TESTS)
+    include(CTest)
+    include(cmake/tests.cmake)
     add_subdirectory(tests)
 endif()
