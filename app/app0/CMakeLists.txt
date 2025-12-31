@@ -1,10 +1,7 @@
-set(APP0_SOURCES
-    src/app.cpp
-)
 
 add_executable(app0
     src/main.cpp
-    ${APP0_SOURCES}
+    src/app.cpp
 )
 
 target_include_directories(app0
