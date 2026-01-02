@@ -10,7 +10,11 @@ target_include_directories(app0
 )
 
 target_link_libraries(app0
-    PRIVATE lib0 flags_options
+    PRIVATE 
+        lib0 
+        Boost::program_options
+        Boost::unordered
+        flags_options
 )
 
 target_precompile_headers(app0

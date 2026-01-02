@@ -17,8 +17,8 @@ add_subdirectory(3rdparty)
 
 include(cmake/flags.cmake)
 
-add_subdirectory(app)
 add_subdirectory(lib)
+add_subdirectory(app)
 
 if(LEARN_CMAKE_BUILD_TESTS)
     include(CTest)
