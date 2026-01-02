@@ -1,15 +1,5 @@
 include(FetchContent)
 
-FetchContent_Declare(
-    doctest
-    GIT_REPOSITORY https://github.com/doctest/doctest.git
-    GIT_TAG v2.4.12
-    OVERRIDE_FIND_PACKAGE
-)
-FetchContent_MakeAvailable(doctest)
-
-################################################################################
-
 set(BOOST_ENABLE_CMAKE ON)
 set(BOOST_INCLUDE_LIBRARIES 
     program_options 
@@ -25,3 +15,22 @@ FetchContent_Declare(
   OVERRIDE_FIND_PACKAGE
 )
 FetchContent_MakeAvailable(Boost)
+
+################################################################################
+
+FetchContent_Declare(
+    fmt
+    GIT_REPOSITORY https://github.com/fmtlib/fmt
+    GIT_TAG        12.1.0
+)
+FetchContent_MakeAvailable(fmt)
+
+################################################################################
+
+FetchContent_Declare(
+    doctest
+    GIT_REPOSITORY https://github.com/doctest/doctest.git
+    GIT_TAG v2.4.12
+    OVERRIDE_FIND_PACKAGE
+)
+FetchContent_MakeAvailable(doctest)

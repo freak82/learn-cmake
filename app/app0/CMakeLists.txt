@@ -12,6 +12,7 @@ target_include_directories(app0
 target_link_libraries(app0
     PRIVATE 
         lib0 
+        fmt::fmt
         Boost::program_options
         Boost::unordered
         flags_options

@@ -2,14 +2,8 @@
 #include <lib0/lib.hpp>
 
 template <>
-struct std::formatter<bpo::options_description>
+struct fmt::formatter<bpo::options_description> : fmt::ostream_formatter
 {
-    constexpr auto parse(auto& ctx) { return ctx.begin(); }
-    auto format(const bpo::options_description&, auto& ctx) const
-    {
-        // TODO:
-        return ctx.out();
-    }
 };
 
 int main(int argc, char** argv)
@@ -24,13 +18,13 @@ int main(int argc, char** argv)
     bpo::store(bpo::parse_command_line(argc, argv, opts), vm);
     bpo::notify(vm);
     if (vm.count("help")) {
-        std::println(stdout, "{}", opts);
+        fmt::println(stdout, "{}", opts);
     } else if (vm.count("version")) {
-        std::println(stdout, "CMake application.\n"
+        fmt::println(stdout, "CMake application.\n"
                              "Version: 0.0.1");
     } else {
-        std::println("the app0::fun result: {}", app0::fun());
-        std::println("the lib0::fun result: {}", lib0::fun());
+        fmt::println("the app0::fun result: {}", app0::fun());
+        fmt::println("the lib0::fun result: {}", lib0::fun());
 
         using namespace std::string_view_literals;
         boost::unordered_flat_map<int, std::string_view> map = {
@@ -38,7 +32,7 @@ int main(int argc, char** argv)
             {42, "the_second_one"sv},
             {84, "the_last_one"sv},
         };
-        std::println("The map entries: {}", map);
+        fmt::println(stdout, "The map: {}", map);
     }
 
     return EXIT_SUCCESS;
